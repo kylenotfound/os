@@ -1,12 +1,9 @@
 #include "../include/console.h"
 
-static unsigned int remaining_bytes = 160;
-
 void print_character(char c) {
-  VGA_MEMORY[CURR] = c; 
-  VGA_MEMORY[CURR + 1] = 0x07; //Default to Gray color
-  CURR = CURR + 2; //increment curernt cursor position to next address
-  remaining_bytes = remaining_bytes - 2;  
+  VGA_MEMORY[Terminal_Position] = c; 
+  VGA_MEMORY[Terminal_Position + 1] = 0x07; //Default to Gray color
+  Terminal_Position = Terminal_Position + 2; //increment curernt cursor position to next address  
 }
 
 void print_string(char* str) {
@@ -17,10 +14,10 @@ void print_string(char* str) {
     i++;
   }
 
-
 }
 
 void print_line(char* str) {
   print_string(str);
-  CURR = CURR + remaining_bytes;
+  Terminal_Position = (Terminal_Position - (Terminal_Position % SCREEN_BYTES_WIDTH)); 
+  Terminal_Position += SCREEN_BYTES_WIDTH; 
 }
