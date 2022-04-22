@@ -1,6 +1,6 @@
 CC=gcc
 TARGET=myos
-C_FILES=./kernel.c ./shell/console.c
+C_FILES=./kernel.c ./shell/console.c ./io/io.c
 OBJS=$(C_FILES:.c=.o)
 
 all compile: $(TARGET)
