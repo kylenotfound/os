@@ -5,7 +5,7 @@ void kernel_early(void) {
 }
 
 int main(void) {
-  unsigned char byte;
+  /**unsigned char byte;
   char* str1= "Kyle Terminal V0.1";
   print_line_with_color(str1, BLUE);
 
@@ -13,5 +13,61 @@ int main(void) {
     while(byte = scan()) {
       print_character(charmap[byte]);
     }
-  }  
+  }*/
+
+  char* str1= " HELLO ";
+  char* str2 = " WORLD ";
+  char* str3 = " TODAY ";
+
+  print_line(str1);
+  set_terminal_font_color(BLUE);
+  print_line(str2);
+  set_terminal_font_color(YELLOW);
+  print_line(str3);
+  print_character_with_color('A', GREEN);
+  print_string_with_color(" BIG STRING", CYAN);
+  print_line_with_color("A new line", BROWN);
+  print_line_with_color(" is here", RED);
+
+  print_line(str1);
+  set_terminal_font_color(BLUE);
+  print_line(str2);
+  set_terminal_font_color(YELLOW);
+  print_line(str3);
+  print_character_with_color('A', GREEN);
+  print_string_with_color(" BIG STRING", CYAN);
+  print_line_with_color("A new line", BROWN);
+  print_line_with_color(" is here", RED);
+
+  print_line(str1);
+  set_terminal_font_color(BLUE);
+  print_line(str2);
+  set_terminal_font_color(YELLOW);
+  print_line(str3);
+  print_character_with_color('A', GREEN);
+  print_string_with_color(" BIG STRING", CYAN);
+  print_line_with_color("A new line", BROWN);
+  print_line_with_color(" is here", RED);
+
+  print_line(str1);
+  set_terminal_font_color(BLUE);
+  print_line(str2);
+  set_terminal_font_color(YELLOW);
+  print_line(str3);
+  print_character_with_color('A', GREEN);
+  print_string_with_color(" BIG STRING", CYAN);
+  print_line_with_color("A new line", BROWN);
+  print_line_with_color(" is here", RED);
+
+  print_line(str1);
+  set_terminal_font_color(BLUE);
+  print_line(str2);
+  set_terminal_font_color(YELLOW);
+  print_line(str3);
+  print_character_with_color('A', GREEN);
+  print_string_with_color(" BIG STRING", CYAN);
+  print_line_with_color("A new line", BROWN);
+
+  print_line_with_color(" is here", RED);
+  shift_terminal_up();
 }

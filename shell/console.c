@@ -54,5 +54,8 @@ void print_line_with_color(char* str, enum Color color) {
 void shift_terminal_up() {
   for (int i = 0; i < TOTAL_SCREEN_DISPLAY; i++) {
     VGA_MEMORY[i] = VGA_MEMORY[i + (2 * VGA_WIDTH)];
+  }
+  for (int i = TOTAL_SCREEN_DISPLAY; i >= TOTAL_SCREEN_DISPLAY - 160; i--) {
+    VGA_MEMORY[i] = '\0';
   }  
 }
