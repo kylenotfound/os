@@ -14,7 +14,7 @@ void print_character(char c) {
 
 void print_character_with_color(char c, enum Color color) {
   terminal_font_color = color;
-  Terminal_Position = Terminal_Position + 2;
+  print_character(c);
 }
 
 void print_string(char* str) {
