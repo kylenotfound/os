@@ -13,8 +13,7 @@ void print_character(char c) {
 }
 
 void print_character_with_color(char c, enum Color color) {
-  VGA_MEMORY[Terminal_Position] = c;
-  VGA_MEMORY[Terminal_Position + 1] = color;
+  terminal_font_color = color;
   Terminal_Position = Terminal_Position + 2;
 }
 
@@ -29,13 +28,8 @@ void print_string(char* str) {
 }
 
 void print_string_with_color(char* str, enum Color color) {
-
-  unsigned int i = 0;
-  while(str[i] != '\0') {
-    print_character_with_color(str[i], color);
-    i++;
-  }  
-
+  terminal_font_color = color;
+  print_string(str);
 }
 
 void print_line(char* str) {
@@ -45,9 +39,8 @@ void print_line(char* str) {
 }
 
 void print_line_with_color(char* str, enum Color color) {
-  print_string_with_color(str, color);
-  Terminal_Position = (Terminal_Position - (Terminal_Position % SCREEN_BYTES_WIDTH));
-  Terminal_Position += SCREEN_BYTES_WIDTH;	
+  terminal_font_color = color;
+  print_line(str);  
 }
 
 // Shift all lines up the terminal screen.
